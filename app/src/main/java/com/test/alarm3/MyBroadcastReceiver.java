@@ -15,6 +15,6 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
         vibrator.vibrate(2000);
 
         notifikacija poruka = new notifikacija();
-        poruka.sendNotification();
+        poruka.sendNotification(context);
     }
 }

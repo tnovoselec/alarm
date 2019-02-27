@@ -13,14 +13,14 @@ import android.view.View;
 
 import static com.test.alarm3.App.CHANNEL_1_ID;
 
-public class notifikacija extends AppCompatActivity {
+public class notifikacija {
 
 
-    public void sendNotification() {
+    public void sendNotification(Context context) {
 
 
         NotificationCompat.Builder mBuilder =
-                new NotificationCompat.Builder(this, CHANNEL_1_ID)
+                new NotificationCompat.Builder(context, CHANNEL_1_ID)
                         .setSmallIcon(R.drawable.ic_android)
                         .setContentTitle("Naslov")
                         .setContentText("Neki text....")
@@ -28,7 +28,7 @@ public class notifikacija extends AppCompatActivity {
 
 
 
-        NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
 
         mNotificationManager.notify(1, mBuilder.build());
